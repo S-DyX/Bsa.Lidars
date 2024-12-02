@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Stanislav Batyrgareev</Authors>
+    <Company>Stanislav Batyrgareev</Company>
+    <Description>Library for working with the lidars of the company Velodyne LiDAR VLP-16</Description>
+    <Copyright>Stanislav Batyrgareev</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>http://bsasearch.org</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/S-DyX/Bsa.Lidars</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>RpLidar lidar Velodyne LiDAR PUCK VLP-16</PackageTags>
+    <PackageReleaseNotes>var settings = new VeloVp16LidarSettings() 
+{
+Port = 2368
+};
+var service = new VeloLidarSerialDevice(settings);
+//service.LidarPointScanEvent += ServiceOnLidarPointScanEvent;
+service.Start();
+//service.Stop();</PackageReleaseNotes>
+    <AssemblyVersion></AssemblyVersion>
+    <FileVersion></FileVersion>
+    <Version>2.0.3</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

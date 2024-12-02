@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Stanislav Batyrgareev</Authors>
+    <Company>Stanislav Batyrgareev</Company>
+    <Description>Library for working with the lidars of the company Samtec
+RpLidar A2, A3</Description>
+    <Copyright>Stanislav Batyrgareev</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>http://bsasearch.org</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/S-DyX/Bsa.Lidars</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>RpLidar lidar slamtec rp A2 A3</PackageTags>
+    <PackageReleaseNotes>var settings = new LidarSettings() 
+{
+ Pwm = 660, 
+ Type = 4,   
+ MaxDistance = 25000, 
+ BaudRate = 115200,
+ Port = "Com3"
+};
+var service = new RpLidarSerialDevice(settings);
+//service.LidarPointGroupScanEvent += _service_LidarPointScanEvent;
+service.Start();
+//service.Stop();</PackageReleaseNotes>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.2</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>
